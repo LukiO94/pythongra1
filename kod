@@ -1,0 +1,69 @@
+import Tkinter, sys, tkMessageBox, random
+
+
+class Player(object):
+    def __init__(self, actSum, score):
+        self.actSum = actSum
+        self.score = score
+
+
+def rzutKostka():
+    return random.randint(1, 6)
+
+
+def zacznij():
+    player1 = Player(0, 0)
+    player2 = Player(0, 0)
+
+    for i in range(int(eLiczbaRund.get())):
+        player1.actSum = 0
+        player2.actSum = 0
+        player1.actSum += rzutKostka()
+        player1.actSum += rzutKostka()
+        player2.actSum += rzutKostka()
+        player2.actSum += rzutKostka()
+        if (player1.actSum > player2.actSum):
+            player1.score += 1
+        elif (player2.actSum > player1.actSum):
+            player2.score += 1
+
+        if (player1.actSum > player2.actSum):
+            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Wygrales ture!" % (player1.actSum, player2.actSum))
+        elif (player1.actSum < player2.actSum):
+            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Przegrales ture!" % (player1.actSum, player2.actSum))
+        else:
+            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Remis w tej turze!" % (player1.actSum, player2.actSum))
+    if (player1.score > player2.score):
+        tkMessageBox.showinfo("Werdykt koncowy", "Ty %d - %d Komputer, Wygrales gre!!!" % (player1.score, player2.score))
+    elif (player1.score < player2.score):
+        tkMessageBox.showinfo("Werdykt koncowy", "Ty %d - %d Komputer, Przegrales gre!!!" % (player1.score, player2.score))
+    else:
+        tkMessageBox.showinfo("Werdykt koncowy", "Ty %d - %d Komputer, Remis!!!" % (player1.score, player2.score))
+
+
+def zamknij():
+    sys.exit()
+
+def test():
+    lInfo.config(text=eLiczbaRund.get())
+
+
+main = Tkinter.Tk()
+
+lInfo = Tkinter.Label(main, text="Podaj liczbe rund i wcisnij ROZPOCZNIJ GRE:")
+lInfo.grid(row=0, column=0)
+eLiczbaRund = Tkinter.Entry(main, width=15)
+eLiczbaRund.grid(row=0, column=1)
+
+lKreska1 = Tkinter.Label(main, text="____________________________________________________")
+lKreska1.grid(row=1, column=0)
+lKreska2 = Tkinter.Label(main, text="____________________________________________________")
+lKreska2.grid(row=1, column=1)
+
+bZacznij = Tkinter.Button(main, text="ROZPOCZNIJ GRE", command=zacznij, width=15)
+bZacznij.grid(row=2, column=0)
+bWyjdz = Tkinter.Button(main, text="Wyjdz", command=zamknij, width=15)
+bWyjdz.grid(row=2, column=1)
+
+
+main.mainloop()
