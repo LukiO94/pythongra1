@@ -28,11 +28,11 @@ def zacznij():
             player2.score += 1
 
         if (player1.actSum > player2.actSum):
-            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Wygrales ture!" % (player1.actSum, player2.actSum))
+            tkMessageBox.showinfo("Werdykt po turze %d" % (i+1), "Ty %d - %d Komputer, Wygrales ture!" % (player1.actSum, player2.actSum))
         elif (player1.actSum < player2.actSum):
-            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Przegrales ture!" % (player1.actSum, player2.actSum))
+            tkMessageBox.showinfo("Werdykt po turze %d" % (i+1), "Ty %d - %d Komputer, Przegrales ture!" % (player1.actSum, player2.actSum))
         else:
-            tkMessageBox.showinfo("Werdykt po turze", "Ty %d - %d Komputer, Remis w tej turze!" % (player1.actSum, player2.actSum))
+            tkMessageBox.showinfo("Werdykt po turze %d" % (i+1), "Ty %d - %d Komputer, Remis w tej turze!" % (player1.actSum, player2.actSum))
     if (player1.score > player2.score):
         tkMessageBox.showinfo("Werdykt koncowy", "Ty %d - %d Komputer, Wygrales gre!!!" % (player1.score, player2.score))
     elif (player1.score < player2.score):
