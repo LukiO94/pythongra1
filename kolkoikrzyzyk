@@ -1,0 +1,184 @@
+import Tkinter, sys, tkMessageBox
+
+
+class Gra (object):
+
+    def __init__(self, stT, st1,st2,st3,st4,st5,st6,st7,st8,st9):
+        self.stT = stT
+        self.st1 = st1
+        self.st2 = st2
+        self.st3 = st3
+        self.st4 = st4
+        self.st5 = st5
+        self.st6 = st6
+        self.st7 = st7
+        self.st8 = st8
+        self.st9 = st9
+
+    def sprawdz(self):
+        if (self.st1==self.st2) and (self.st1!=0):
+      #  or ((self.st4==self.st5) and (self.st5==self.st6) and (self.st4!=0))
+     #   or ((self.st7==self.st8) and (self.st8==self.st9) and (self.st7!=0))
+    #    or ((self.st1==self.st4) and (self.st4==self.st7) and (self.st1!=0))
+   #     or ((self.st2==self.st5) and (self.st5==self.st8) and (self.st2!=0))
+  #      or ((self.st3==self.st6) and (self.st6==self.st9) and (self.st3!=0))
+ #       or ((self.st1==self.st5) and (self.st5==self.st9) and (self.st1!=0))
+#        or ((self.st3==self.st5) and (self.st5==self.st7) and (self.st3!=0))):
+            if (self.stT==0):
+                tkMessageBox.showinfo("Werdykt!", "Wygralo kolko!")
+            else:
+                tkMessageBox.showinfo("Werdykt!", "Wygral krzyzyk!")
+
+    def zmiana1(self):
+        if (self.stT==0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut1.config(text="X")
+            self.st1=1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut1.config(text="O")
+            self.st1=2
+        self.sprawdz()
+
+    def zmiana2(self):
+        if (self.stT==0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut2.config(text="X")
+            self.st1=1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut2.config(text="O")
+            self.st1=2
+        self.sprawdz()
+
+    def zmiana3(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut3.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut3.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana4(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut4.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut4.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana5(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut5.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut5.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana6(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut6.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut6.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana7(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut7.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut7.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana8(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut8.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut8.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+    def zmiana9(self):
+        if (self.stT == 0):
+            lTura.config(text="O")
+            self.stT = 1
+            bBut9.config(text="X")
+            self.st1 = 1
+        else:
+            lTura.config(text="X")
+            self.stT = 0
+            bBut9.config(text="O")
+            self.st1 = 2
+        self.sprawdz()
+
+
+def zamknij():
+    sys.exit()
+
+main = Tkinter.Tk()
+
+gra = Gra(0,0,0,0,0,0,0,0,0,0)
+
+bBut1 = Tkinter.Button(main, text="", command=gra.zmiana1, width=15, height=5)
+bBut1.grid(row=0, column=0)
+bBut2 = Tkinter.Button(main, text="", command=gra.zmiana2, width=15, height=5)
+bBut2.grid(row=0, column=1)
+bBut3 = Tkinter.Button(main, text="", command=gra.zmiana3, width=15, height=5)
+bBut3.grid(row=0, column=2)
+bBut4 = Tkinter.Button(main, text="", command=gra.zmiana4, width=15, height=5)
+bBut4.grid(row=1, column=0)
+bBut5 = Tkinter.Button(main, text="", command=gra.zmiana5, width=15, height=5)
+bBut5.grid(row=1, column=1)
+bBut6 = Tkinter.Button(main, text="", command=gra.zmiana6, width=15, height=5)
+bBut6.grid(row=1, column=2)
+bBut7 = Tkinter.Button(main, text="", command=gra.zmiana7, width=15, height=5)
+bBut7.grid(row=2, column=0)
+bBut8 = Tkinter.Button(main, text="", command=gra.zmiana8, width=15, height=5)
+bBut8.grid(row=2, column=1)
+bBut9 = Tkinter.Button(main, text="", command=gra.zmiana9, width=15, height=5)
+bBut9.grid(row=2, column=2)
+
+lInfo = Tkinter.Label(main, text="Tura:", width=15)
+lInfo.grid(row=0, column=4)
+lTura = Tkinter.Label(main, text="X", width=15)
+lTura.grid(row=1, column=4)
+
+bWyjscie = Tkinter.Button(main, text="Wyjscie", width=15, command=zamknij)
+bWyjscie.grid(row=2, column=4)
+
+main.mainloop()
